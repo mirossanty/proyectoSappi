@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo</title>
+    <link rel="stylesheet" href="css/estilosBibliografia.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- barra de navegacion -->
+    <nav class="navbar fixed-top navbar-expand-lg"style="background-color: #63acc7;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><img src="img/LOGO.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">SAPPI</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              <a class="nav-link" href="#codigo-baston">Explicacion del código - Bastón</a>
+              <a class="nav-link" href="#codigo-lente">Explicacion del código - Lentes</a>
+              <!-- <a class="nav-link" href="#brazalete">Brazalete</a> -->
+            </div>
+          </div>
+        </div>
+      </nav>
+<!-- explicacion baston -->
+      <section class="services contenedor" id="codigo-baston">
+        <h2 class="subtitulo">Sistema ultrasónico-Bastón</h2>
+        <div class="contenedor-servicio">
+            <img src="img/desarrollo1.svg" alt="">
+            <div class="checklist-servicio">
+                <div class="service">
+                    <h3 class="n-service"><span class="number">1</span>Explicación del código</h3>
+                    <p> Para el desarrollo del código como anteriormente se mencionó se empleó parte del mismo código desarrollado en las simulaciones anteriores por lo que solo se añadieron algunos elementos y variables que nos permitirían que el sistema funcionara de una forma más completa. </p>
+                    <p>El código contempla a 2 elementos de entrada y 5 de salida, el sistema solo funciona si el Botón (Bot) se encuentra encendido por lo que se coloca una condicional if para que evalué este aparatado, una vez esta se cumpla la variable C1 suma +1 a su valor inicial 0 para indicar que el sistema se encendió por lo menos 1 vez, posteriormente se lee un condicional if para indicar que ya encendió el sistema una vez esta se cumpla manda a encender el sensor IF por 2 segundos y posteriormente lo apaga para después sumar +1 ala variable C3 con el fin de que esta condicional no vuelva a repetirse hasta que el sistema reinicie, seguido de ello se manda una señal al sistema para encender Triger (TRIG) el cual manda una señal a una frecuencia especifica la cual al revotar con algún objeto es captada por la entrada Eco que devuelve el tiempo que tardo la señal en hacer el recorrido y mediante una operación de la duración (tiempo en recorrido) entre 58.2 que es una constante determinada por el fabricante, nos da como resultado la distancia a la que se encuentra el objeto en centímetros. </p>
+                  
+                </div>
+            </div>
+            <p>Posteriormente se evalúa con diferentes condicionales if si el objeto se encuentra a un rango determinado. La primera condicional evalúa si el objeto se encuentra a una distancia de 1cm a 25cm, la segunda condicional evalúa si el objeto está a una distancia de 1cm a 50cm y finalmente el tercer condicional evalúa si el objeto se encuentra en un rango de 1cm a 75cm. Una vez que se cumpla alguna de estas condicionales el sistema manda a prender el sensor correspondiente y solo se apagara si el objeto sale del rango determinado, de manera que entre más cerca se encuentre el basto de un objeto aumentaran la cantidad de sensores encendidos del sistema. </p>
+            <p>En caso de que el Botón (Bot) se encuentre apagado los elementos de salida TRIG, Sen, Sen1 y Sen2 permanecerán apagados y los valores de C1, C2 y C3 se declararan a 0, para delimitar los errores una vez que se vuelva a prender el sistema. Sin embargo, si el sistema ya se encendió por lo menos 1 una vez, al apagarlo no solo se cumplirán las anteriores condicionales si no que mandara una señal a el sensor IF que lo encenderá por 1 segundo, posteriormente lo apagara para después sumar un +1 al C2 para evitar que esta condición se vuelva a ejecutar, y sirviendo como un medio para indicar que el sistema ya está apagado.</p>
+        </div>
+               
+      </section>
+      <!-- galeria imagenes mango -->
+<section class="gallery" id="galeria">
+            <div class="contenedor">
+                <h2 class="subtitulo">Imágenes del código, simulación, montaje en físico y diseño del mango</h2>
+                <div class="contenedor-galeria">
+                    <img src="img/elaboracion.jpeg" class="img-galeria" alt="Hola">
+                    <img src="img/usobaston.jpeg" class="img-galeria" alt="">
+                    <img src="img/simulacion1.jpeg" class="img-galeria" alt="">
+                    <img src="img/montajeEnFisico.jpeg" class="img-galeria" alt="">
+                    <img src="img/mangosEdit.jpg" class="img-galeria" alt="">
+                </div>
+            </div>
+        </section>
+        <div class="imagen-light">
+          <img src="img/close.svg" alt="" class="close">
+          <img src="" alt="" class="agregar-imagen">
+      </div>
+     
+<!-- explicacion lentes -->
+<section class="services contenedor" id="codigo-lente">
+  <h2 class="subtitulo">Sistema ultrasónico-Lentes</h2>
+  <div class="contenedor-servicio">
+      <img src="img/desarrollo2.svg" alt="">
+      <div class="checklist-servicio">
+          <div class="service">
+              <h3 class="n-service"><span class="number">2</span>Explicación del código</h3>
+              <p>Para el desarrollo de este sistema contemplamos una menor cantidad de elementos con respecto al sistema del mango. Por lo que fue un poco más sencillo estructurar tanto su código como el montaje del mismo.</p>
+              <p>Para el desarrollo de este código utilizamos de referencia la estructura y lógica empleada en el sistema de bastón. Esta versión contempla 1 entra y 1 salida únicamente, en este caso la entrada corresponde al Sensor ultrasónico designado como PW y la salida corresponde al mini motor designado como Sen. Posteriormente se declaran cada elemento como entrada y salida, una vez hecho eso se estructura las conversiones ya que el sensor está programado para devolver los valores en pulgadas, realizamos las operaciones necesarias para obtener el valor en centímetros. En el siguiente apartado se coloca una indicación para realizar un monitoreo de las distancias en el Monitor Serie a través de la computadora. Posteriormente se realiza una comparación de valores a través de la condición if en donde según el rango que devuelva el sensor, el mini motor se prendera por 0.5 segundos y después tendrá un retraso para su encendido según la condicional en el caso del valor ser mayor o igual a 1 y menor o igual a 25 el retraso será de 0.5 segundos. Si valor ser mayor o igual a 26 y menor o igual a 50 el retraso será de 1 segundos, las 2 condicionales restantes siguen la misma secuencia sumando a la distancia 25cm con respecto a la anterior y aumentando 0.5 segundos al retraso del encendido.</p>
+            
+          </div>
+      </div>
+      <div class="service">
+        <p>Para el desarrollo de los lentes usamos el software de AutoCAD tomando en cuenta los avances que tuvimos en el transcurso de la exposición anterior, comenzamos a enfocarnos para diseñar la estructura del sistema, siendo el siguiente paso dentro del desarrollo de nuestro proyecto. Contemplando algunas de las características básicas de los lentes, así como un pequeño bocetó se creó un diseño sencillo, que estaremos modificando para adecuarlo conforme a los materiales que integraran el sistema. </p>
+        <h3 class="n-service"><span class="number">3</span>Brazalete</h3>
+        <p>Durante el desarrollo de la tercera etapa se realizó un de los elementos complementarios a la página, el funcionamiento de este es colocar un código QR en su costado visible de manera que permita hacer lectura del mismo mediante el uso de un teléfono.</p>
+      </div>
+  </div>
+         
+</section>
+<!-- galeria imagenes lentes-brazalete -->
+<section class="gallery" id="galeria">
+      <div class="contenedor">
+          <h2 class="subtitulo">Imágenes del código & diseño de lentes - brazalete</h2>
+          <div class="contenedor-galeria">
+              <img src="img/lentes nuevo.jpeg" class="img-galeria" alt="">
+              <img src="img/lentesnuevo2.jpeg" class="img-galeria" alt="">
+              <img src="img/lentesnuevo3.jpeg" class="img-galeria" alt="">
+              <img src="img/diseñolentes.jpeg" class="img-galeria" alt="">
+              <img src="img/brazalete.jpeg" class="img-galeria" alt="">
+          </div>
+      </div>
+  </section>
+  <div class="imagen-light">
+    <img src="img/close.svg" alt="" class="close">
+    <img src="" alt="" class="agregar-imagen">
+</div>
+
+<footer id="footer">
+  <div class="contenedor footer-content">
+          <div class="contact-us">
+              <h2 class="brand">Sistema ultrasónico-Bastón</h2>
+              <p>UTSV</p>
+          </div>
+          <div class="social-media">
+              <a href="" class="social-media-icon">
+                  <i class='bx bxl-facebook'></i>
+              </a>
+              <a href="./" class="social-media-icon">
+                  <i class='bx bxl-twitter'></i>
+              </a>
+              <a href="./" class="social-media-icon">
+                  <i class='bx bxl-instagram' ></i>
+              </a>
+          </div>
+  </div>
+  <div class="line"></div>
+</footer>
+        <script src="js/lightbox.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
